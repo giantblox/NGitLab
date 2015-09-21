@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Runtime.Serialization;
 
 namespace NGitLab.Models {
@@ -22,7 +23,7 @@ namespace NGitLab.Models {
         public string Description;
 
         [DataMember(Name = "work_in_progress")]
-        public bool WorkInProgress;
+        public string WorkInProgress;
 
         [DataMember(Name = "state")]
         public string State;
@@ -57,7 +58,7 @@ namespace NGitLab.Models {
         [DataMember(Name = "target_project_id")]
         public int TargetProjectId;
 
-        [DataMember(Name = "files")]
+        [DataMember(Name = "changes")]
         public MergeRequestFileData[] Files;
     }
 }
