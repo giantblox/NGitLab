@@ -18,7 +18,10 @@ namespace NGitLab.Models
         public string Title;
 
         [DataMember(Name = "state_event")]
-        public string NewState; 
+        public string NewState;
+
+        [DataMember(Name = "description")]
+        public string Description;
     }
 
     // ReSharper disable InconsistentNaming
