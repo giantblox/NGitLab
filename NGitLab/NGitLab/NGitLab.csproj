@@ -94,6 +94,7 @@
     <Compile Include="Models\Project.cs" />
     <Compile Include="Models\ProjectCreate.cs" />
     <Compile Include="Models\ProjectHook.cs" />
+    <Compile Include="Models\ProjectHookClientSide.cs" />
     <Compile Include="Models\ProjectHookUpsert.cs" />
     <Compile Include="Models\Session.cs" />
     <Compile Include="Models\SingleCommit.cs" />

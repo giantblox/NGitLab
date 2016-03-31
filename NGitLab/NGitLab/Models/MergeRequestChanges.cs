@@ -21,9 +21,9 @@ namespace NGitLab.Models {
 
         [DataMember(Name = "description")]
         public string Description;
-
+        //null or 0 since 8.6.1
         [DataMember(Name = "work_in_progress")]
-        public string WorkInProgress;
+        public bool? WorkInProgress;
 
         [DataMember(Name = "state")]
         public string State;
