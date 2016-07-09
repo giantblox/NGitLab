@@ -1,38 +1,32 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 
-namespace NGitLab.Models
-{
+namespace NGitLab.Models {
     [DataContract]
-    public class UserUpsert
-    {
+    public class UserUpsert {
+        [DataMember(Name = "bio")]
+        public string Bio;
+
+        [DataMember(Name = "can_create_group")]
+        public bool CanCreateGroup;
+
         [Required]
         [DataMember(Name = "email")]
         public string Email;
 
-        [Required]
-        [DataMember(Name = "password")]
-        public string Password;
+        [DataMember(Name = "admin")]
+        public bool IsAdmin;
 
-        [Required]
-        [DataMember(Name = "username")]
-        public string Username;
+        [DataMember(Name = "linkedin")]
+        public string Linkedin;
 
         [Required]
         [DataMember(Name = "name")]
         public string Name;
 
-        [DataMember(Name = "skype")]
-        public string Skype;
-
-        [DataMember(Name = "linkedin")]
-        public string Linkedin;
-
-        [DataMember(Name = "twitter")]
-        public string Twitter;
-
-        [DataMember(Name = "website_url")]
-        public string WebsiteURL;
+        [Required]
+        [DataMember(Name = "password")]
+        public string Password;
 
         [DataMember(Name = "projects_limit")]
         public int ProjectsLimit;
@@ -40,13 +34,17 @@ namespace NGitLab.Models
         [DataMember(Name = "provider")]
         public string Provider;
 
-        [DataMember(Name = "bio")]
-        public string Bio;
+        [DataMember(Name = "skype")]
+        public string Skype;
 
-        [DataMember(Name = "admin")]
-        public bool IsAdmin;
+        [DataMember(Name = "twitter")]
+        public string Twitter;
 
-        [DataMember(Name = "can_create_group")]
-        public bool CanCreateGroup;
+        [Required]
+        [DataMember(Name = "username")]
+        public string Username;
+
+        [DataMember(Name = "website_url")]
+        public string WebsiteURL;
     }
 }

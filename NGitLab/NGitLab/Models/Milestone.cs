@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace NGitLab.Models
-{
+namespace NGitLab.Models {
     [DataContract]
-    public class Milestone
-    {
-        [DataMember(Name = "id")]
-        public int Id;
-
-        [DataMember(Name = "title")]
-        public string Title;
+    public class Milestone {
+        [DataMember(Name = "created_at")]
+        public DateTime CreatedAt;
 
         [DataMember(Name = "description")]
         public string Description;
@@ -18,11 +13,14 @@ namespace NGitLab.Models
         [DataMember(Name = "due_date")]
         public string DueDate;
 
+        [DataMember(Name = "id")]
+        public int Id;
+
         [DataMember(Name = "state")]
         public string State;
 
-        [DataMember(Name = "created_at")]
-        public DateTime CreatedAt;
+        [DataMember(Name = "title")]
+        public string Title;
 
         [DataMember(Name = "updated_at")]
         public DateTime UpdatedAt;

@@ -1,28 +1,26 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 
-namespace NGitLab.Models
-{
+namespace NGitLab.Models {
     [DataContract]
-    public class FileUpsert
-    {
+    public class FileUpsert {
         [Required]
-        [DataMember(Name="file_path")]
-        public string Path; 
-        
-        [Required]
-        [DataMember(Name="branch_name")]
+        [DataMember(Name = "branch_name")]
         public string Branch;
 
-        [DataMember(Name="encoding")]
+        [Required]
+        [DataMember(Name = "commit_message")]
+        public string CommitMessage;
+
+        [Required]
+        [DataMember(Name = "content")]
+        public string Content;
+
+        [DataMember(Name = "encoding")]
         public string Encoding;
 
         [Required]
-        [DataMember(Name="content")]
-        public string Content;
-        
-        [Required]
-        [DataMember(Name="commit_message")]
-        public string CommitMessage;
+        [DataMember(Name = "file_path")]
+        public string Path;
     }
 }

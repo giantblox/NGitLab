@@ -2,27 +2,22 @@
 using NGitLab.Models;
 using NUnit.Framework;
 
-namespace NGitLab.Tests.MergeRequest
-{
-    public class MergeRequestCommentsClientTests
-    {
-        private readonly IMergeRequestCommentClient _mergeRequestComments;
+namespace NGitLab.Tests.MergeRequest {
+    public class MergeRequestCommentsClientTests {
+        readonly IMergeRequestCommentClient _mergeRequestComments;
 
-        public MergeRequestCommentsClientTests()
-        {
+        public MergeRequestCommentsClientTests() {
             _mergeRequestComments = _MergeRequestClientTests.MergeRequestClient.Comments(5);
         }
 
         [Test]
-        public void GetAllComments()
-        {
+        public void GetAllComments() {
             var comments = _mergeRequestComments.All.ToArray();
             CollectionAssert.IsNotEmpty(comments);
         }
 
         [Test]
-        public void AddCommentToMergeRequest()
-        {
+        public void AddCommentToMergeRequest() {
             const string commentMessage = "note";
             var newComment = new MergeRequestComment {Note = commentMessage};
 

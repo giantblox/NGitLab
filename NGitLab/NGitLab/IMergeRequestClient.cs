@@ -1,13 +1,11 @@
 ﻿using System.Collections.Generic;
 using NGitLab.Models;
 
-namespace NGitLab
-{
-    public interface IMergeRequestClient
-    {
+namespace NGitLab {
+    public interface IMergeRequestClient {
         IEnumerable<MergeRequest> All { get; }
-        IEnumerable<MergeRequest> AllInState(MergeRequestState state);
         MergeRequest this[int id] { get; }
+        IEnumerable<MergeRequest> AllInState(MergeRequestState state);
 
         MergeRequest Create(MergeRequestCreate mergeRequest);
         MergeRequest Update(int mergeRequestId, MergeRequestUpdate mergeRequest);
