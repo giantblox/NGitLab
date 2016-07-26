@@ -11,17 +11,13 @@ namespace NGitLab.Impl {
             _projectPath = Project.Url + "/" + projectId;
         }
 
-        public IEnumerable<MergeRequest> All {
-            get { return _api.Get().GetAll<MergeRequest>(_projectPath + "/merge_requests"); }
-        }
+        public IEnumerable<MergeRequest> All => _api.Get().GetAll<MergeRequest>(_projectPath + "/merge_requests");
 
         public IEnumerable<MergeRequest> AllInState(MergeRequestState state) {
             return _api.Get().GetAll<MergeRequest>(_projectPath + "/merge_requests?state=" + state);
         }
 
-        public MergeRequest this[int id] {
-            get { return _api.Get().To<MergeRequest>(_projectPath + "/merge_request/" + id); }
-        }
+        public MergeRequest this[int id] => _api.Get().To<MergeRequest>(_projectPath + "/merge_request/" + id);
 
         public MergeRequest Create(MergeRequestCreate mergeRequest) {
             return _api
@@ -43,6 +39,9 @@ namespace NGitLab.Impl {
 
         public IMergeRequestCommentClient Comments(int mergeRequestId) {
             return new MergeRequestCommentClient(_api, _projectPath, mergeRequestId);
+        }
+        public IMergeRequestCommitsClient Commits(int mergeRequestId) {
+            return new MergeRequestCommitsClient(_api, _projectPath, mergeRequestId);
         }
 
         public IMergeRequestChangesClient Changes(int mergeRequestId) {
