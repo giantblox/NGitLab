@@ -1231,6 +1231,11 @@ namespace NGitLab.Impl {
                         return DateTimeOffset.ParseExact(str, Iso8601Format, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
                     if (type == typeof(Guid) || (ReflectionUtils.IsNullableType(type) && Nullable.GetUnderlyingType(type) == typeof(Guid)))
                         return new Guid(str);
+                    if (ReflectionUtils.IsEnum(type) || (ReflectionUtils.IsNullableType(type) && Nullable.GetUnderlyingType(type).IsEnum)) {
+                        if (ReflectionUtils.IsNullableType(type))
+                            return Enum.Parse(Nullable.GetUnderlyingType(type), str);
+                        return Enum.Parse(type, str);
+                    }
                     if (type == typeof(Uri)) {
                         var isValid = Uri.IsWellFormedUriString(str, UriKind.RelativeOrAbsolute);
 
@@ -1573,6 +1578,10 @@ namespace NGitLab.Impl {
 
         public static bool IsValueType(Type type) {
             return GetTypeInfo(type).IsValueType;
+        }
+
+        public static bool IsEnum(Type type) {
+            return GetTypeInfo(type).IsEnum;
         }
 
         public static IEnumerable<ConstructorInfo> GetConstructors(Type type) {

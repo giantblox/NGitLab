@@ -28,9 +28,18 @@ namespace NGitLab.Models {
         public string Name;
 
         [DataMember(Name = "status")]
-        public string Status;
+        public BuildStatus? Status;
 
         [DataMember(Name = "user")]
         public User User;
+    }
+
+    public enum BuildStatus {
+        undefined,
+        pending,
+        running,
+        failed,
+        success,
+        canceled
     }
 }
