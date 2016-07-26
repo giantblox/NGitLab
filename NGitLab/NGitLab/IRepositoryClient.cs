@@ -13,6 +13,7 @@ namespace NGitLab {
         IFilesClient Files { get; }
 
         IBranchClient Branches { get; }
+        IBuildClient Builds { get; }
 
         IProjectHooksClient ProjectHooks { get; }
         void GetRawBlob(string sha, Action<Stream> parser);

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography;
 
 namespace NGitLab {
     /// <summary>
@@ -10,6 +11,7 @@ namespace NGitLab {
         readonly uint _p3; // 20
 
         public Sha1(string value) {
+
             if (string.IsNullOrEmpty(value))
                 throw new ArgumentException("Cannot be null or empty", "value");
 
@@ -43,9 +45,9 @@ namespace NGitLab {
         }
 
         public override string ToString() {
-            return _p1.ToString("X") +
-                   _p2.ToString("X") +
-                   _p3.ToString("X");
+            return _p1.ToString("X16") +
+                   _p2.ToString("X16") +
+                   _p3.ToString("X8");
         }
 
         static ulong GetLong(string value, ref int i) {

@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="GitLabClient.cs" />
     <Compile Include="IBranchClient.cs" />
+    <Compile Include="IBuildClient.cs" />
     <Compile Include="IFilesClient.cs" />
     <Compile Include="IIssueClient.cs" />
     <Compile Include="IMergeRequestChangesClient.cs" />
@@ -52,6 +53,7 @@
     <Compile Include="Impl\API.cs" />
     <Compile Include="Impl\BranchClient.cs" />
     <Compile Include="IMergeRequestCommentClient.cs" />
+    <Compile Include="Impl\BuildClient.cs" />
     <Compile Include="Impl\IssueClient.cs" />
     <Compile Include="Impl\MergeRequestChangesClient.cs" />
     <Compile Include="Impl\MergeRequestClient.cs" />
@@ -68,11 +70,13 @@
     <Compile Include="IProjectHooksClient.cs" />
     <Compile Include="IRepositoryClient.cs" />
     <Compile Include="IUserClient.cs" />
+    <Compile Include="Models\ArtifactsFile.cs" />
     <Compile Include="Models\Assignee.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Branch.cs" />
     <Compile Include="Models\BranchCreate.cs" />
     <Compile Include="Models\BranchRemovalStatus.cs" />
+    <Compile Include="Models\Build.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Commit.cs" />
     <Compile Include="Models\CommitInfo.cs" />
