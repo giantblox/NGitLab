@@ -10,13 +10,13 @@ namespace NGitLab.Models {
         public Commit Commit;
 
         [DataMember(Name = "created_at")]
-        public DateTime CreatedAt;
+        public DateTime? CreatedAt;
 
         [DataMember(Name = "started_at")]
-        public DateTime StartedAt;
+        public DateTime? StartedAt;
 
         [DataMember(Name = "finished_at")]
-        public DateTime FinishedAt;
+        public DateTime? FinishedAt;
 
         [DataMember(Name = "artifacts_file")]
         public ArtifactsFile ArtifactsFile;
