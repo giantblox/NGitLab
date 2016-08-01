@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using NGitLab.Models;
 
 namespace NGitLab.Impl {
@@ -16,6 +18,12 @@ namespace NGitLab.Impl {
         }
         public IEnumerable<Build> GetBuilds() {
             return _api.Get().GetAll<Build>(_builds);
+        }
+        public void GetArtifactFile(Build build, Action<Stream> parser) {
+            _api.Get().Stream(_builds + $"/{build.Id}/artifacts", parser);
+        }
+        public Build Retry(Build build) {
+            return _api.Post().To<Build>(_builds + $"/{build.Id}/retry");
         }
     }
 }
