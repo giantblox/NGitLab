@@ -19,6 +19,12 @@ namespace NGitLab.Models {
         [DataMember(Name = "push_events")]
         public bool PushEvents;
 
+        [DataMember(Name = "build_events")]
+        public bool BuildEvents;
+
+        [DataMember(Name = "enable_ssl_verification")]
+        public bool EnableSSLVerification;
+
         [DataMember(Name = "url")]
         public Uri Url;
     }
