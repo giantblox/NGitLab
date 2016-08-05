@@ -25,5 +25,8 @@ namespace NGitLab.Impl {
         public Build Retry(Build build) {
             return _api.Post().To<Build>(_builds + $"/{build.Id}/retry");
         }
+        public Build Cancel(Build build) {
+            return _api.Post().To<Build>(_builds + $"/{build.Id}/cancel");
+        }
     }
 }
