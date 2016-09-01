@@ -28,5 +28,8 @@ namespace NGitLab.Impl {
         public Build Cancel(Build build) {
             return _api.Post().To<Build>(_builds + $"/{build.Id}/cancel");
         }
+        public void GetTraceFile(Build build, Action<Stream> parser) {
+            _api.Get().Stream(_builds + $"/{build.Id}/trace", parser);
+        }
     }
 }

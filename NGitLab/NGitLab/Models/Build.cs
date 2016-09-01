@@ -40,6 +40,7 @@ namespace NGitLab.Models {
         running,
         failed,
         success,
-        canceled
+        canceled,
+        created,
     }
 }
