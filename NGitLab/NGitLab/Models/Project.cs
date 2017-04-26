@@ -53,5 +53,8 @@ namespace NGitLab.Models {
 
         [DataMember(Name = "wiki_enabled")]
         public bool WikiEnabled;
+
+        [DataMember(Name = "tag_list")]
+        public string[] Tags;
     }
 }
