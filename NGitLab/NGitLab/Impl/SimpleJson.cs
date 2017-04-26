@@ -1380,8 +1380,12 @@ namespace NGitLab.Impl {
             IDictionary<string, object> obj = new JsonObject();
             var getters = GetCache[type];
             foreach (var getter in getters) {
-                if (getter.Value != null)
-                    obj.Add(MapClrMemberNameToJsonFieldName(getter.Key), getter.Value(input));
+                if (getter.Value != null) {
+                    var val = getter.Value(input);
+                    if (val == null)
+                        continue;
+                    obj.Add(MapClrMemberNameToJsonFieldName(getter.Key), val);
+                }
             }
             output = obj;
             return true;
