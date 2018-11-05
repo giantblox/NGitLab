@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net40;net45; netstandard2.0
+    <TargetFrameworks>net40;net45; netstandard2.0; netcoreapp2.1
     </TargetFrameworks>
     
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -35,6 +35,10 @@
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
   </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp2.1' ">
+  </ItemGroup>
+
   <ItemGroup>
     <Folder Include="Properties\" />
   </ItemGroup>
